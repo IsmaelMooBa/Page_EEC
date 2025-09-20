@@ -58,7 +58,7 @@ section {
   background: #7cb3bf;
   color: white;
   display: flex;
-  flex-direction: column;   /* Cambia a columna */
+  flex-direction: column;   /* Coloca los elementos en columna */
   justify-content: center;
   align-items: center;
   gap: 30px;
