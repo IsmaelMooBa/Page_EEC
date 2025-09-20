@@ -58,13 +58,13 @@ section {
   background: #7cb3bf;
   color: white;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;   /* Cambia a columna */
   justify-content: center;
   align-items: center;
-  gap: 40px;
-  text-align: left;
-  padding-left: 8vw;   /* Añade espacio a la izquierda para centrar más el contenido */
-  padding-right: 8vw;  /* Añade espacio a la derecha para centrar más el contenido */
+  gap: 30px;
+  text-align: center;
+  padding-left: 0;
+  padding-right: 0;
 }
 
 #inicio h1 {
@@ -78,26 +78,27 @@ section {
 }
 
 #inicio .carousel {
-  order: 1;                    /* Carrusel a la izquierda */
-  flex: 1 1 55%;               /* Ocupa más espacio */
-  margin: 0;                   /* Elimina margen extra */
+  order: 1;
+  width: 90%;
+  max-width: 1000px;
+  margin: 0 auto;
 }
 
 #inicio .inicio-texto {
-  order: 2;                    /* Texto a la derecha */
-  flex: 1 1 45%;
+  order: 2;
+  width: 100%;
+  max-width: 700px;
   display: flex;
   flex-direction: column;
-  align-items: flex-end;      /* Todo el texto a la derecha */
-  justify-content: center;
-  gap: 20px;
-  text-align: right;
+  align-items: center;
+  text-align: center;
+  gap: 16px;
 }
 
 #inicio h1,
 #inicio p,
 #inicio .btn {
-  text-align: right;
+  text-align: center;
   width: 100%;
 }
 
