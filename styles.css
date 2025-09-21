@@ -32,24 +32,50 @@ nav {
   display: flex;
   flex-direction: column;    /* Lista vertical */
   align-items: flex-start;   /* Alinea a la izquierda */
-  list-style: disc inside;   /* Muestra viñetas */
+  list-style: none;
   margin-bottom: 30px;
-  gap: 10px;
-  padding: 0 0 0 20px;
+  gap: 18px;
+  padding: 28px 22px 28px 22px;
   background: #2596be;
+  border-radius: 18px;
+  box-shadow: 0 2px 12px rgba(25,118,210,0.08);
+  margin-left: 24px;
+}
+
+.inicio-menu li {
+  margin-bottom: 0;
+  position: relative;
+  padding-left: 32px;
+  font-size: 1.1rem;
+}
+
+.inicio-menu li::before {
+  content: "▶";
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: #1976d2;
+  font-size: 1.1em;
+  line-height: 1.2;
+  transition: color 0.2s;
 }
 
 .inicio-menu li a {
-  color: #fff;               /* Letras blancas */
+  color: #fff;
   text-decoration: none;
-  font-weight: 500;
-  font-size: 1.1rem;
-  transition: color 0.2s;
+  font-weight: 600;
+  font-size: 1.13rem;
+  letter-spacing: 0.5px;
+  padding: 6px 18px 6px 0;
+  border-radius: 8px;
+  transition: background 0.2s, color 0.2s, box-shadow 0.2s;
+  display: inline-block;
 }
 
 .inicio-menu li a:hover {
   background: #1976d2;
   color: #fff;
+  box-shadow: 0 2px 8px rgba(25,118,210,0.15);
 }
 
 /* Secciones */
@@ -66,7 +92,7 @@ section {
   min-height: 60vh;
   box-shadow: 0 8px 32px rgba(25,118,210,0.08);
   display: flex;
-  flex-direction: column;   /* Coloca los elementos en columna */
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   gap: 30px;
@@ -112,10 +138,10 @@ section {
 
 #inicio .btn {
   margin-top: 20px;
-  padding: 8px 18px;         /* Más pequeño */
-  font-size: 0.9rem;         /* Letra más pequeña */
+  padding: 8px 18px;
+  font-size: 0.9rem;
   border-radius: 20px;
-  align-self: flex-end;      /* Botón alineado a la derecha */
+  align-self: flex-end;
   width: auto;
   text-align: center;
 }
@@ -124,7 +150,7 @@ section {
 .btn {
   margin-top: 20px;
   padding: 12px 25px;
-  background: #e59537; /* Naranja cálido */
+  background: #fb8e17;
   color: white;
   border: none;
   border-radius: 30px;
@@ -136,14 +162,14 @@ section {
 }
 
 .btn:hover {
-  background: rgba(2, 114, 137, 1); /* Azul fuerte */
+  background: #2596be;
   transform: translateY(-3px);
   box-shadow: 0 5px 15px rgba(0,0,0,0.3);
 }
 
 /* Títulos */
 h2 {
-  color: rgba(2, 114, 137, 1); /* Azul fuerte */
+  color: #1976d2;
   margin-bottom: 20px;
   font-size: 2rem;
 }
@@ -166,7 +192,7 @@ p {
 .card {
   background: white;
   border-radius: 15px;
-  border-top: 5px solid rgba(249,145,23,1); /* Línea decorativa naranja */
+  border-top: 5px solid #fb8e17;
   box-shadow: 0 5px 15px rgba(0,0,0,0.1);
   padding: 20px;
   transition: transform 0.3s, box-shadow 0.3s;
@@ -178,7 +204,7 @@ p {
 }
 
 .card h3 {
-  color: #fb8e17; /* Naranja brillante */
+  color: #fb8e17;
   margin-bottom: 10px;
 }
 
@@ -190,7 +216,7 @@ p {
 
 /* Footer */
 footer {
-  background: #7cb3bf; /* Azul suave */
+  background: #2596be;
   color: white;
   padding: 20px;
   text-align: center;
@@ -199,8 +225,8 @@ footer {
 /* Carrusel */
 .carousel {
   position: relative;
-  width: 90%;           /* Más ancho */
-  max-width: 1000px;    /* Más grande */
+  width: 90%;
+  max-width: 1000px;
   margin: 30px auto;
   overflow: hidden;
   border-radius: 12px;
@@ -215,8 +241,8 @@ footer {
 
 .carousel-images img {
   min-width: 100%;
-  height: 400px;        /* Más alto */
-  object-fit: contain;  /* Muestra la imagen completa */
+  height: 400px;
+  object-fit: contain;
   display: none;
   border-radius: 12px;
   background: transparent;
@@ -242,27 +268,6 @@ footer {
 .carousel-btn.next { right: 10px; }
 
 /* Inicio - Sección de menú */
-.inicio-menu {
-  display: flex;
-  justify-content: center;
-  list-style: none;
-  margin-bottom: 30px;
-  gap: 30px;
-  padding: 0;
-}
-
-.inicio-menu li a {
-  color: #1976d2;
-  text-decoration: none;
-  font-weight: 500;
-  font-size: 1rem;
-  transition: color 0.2s;
-}
-
-.inicio-menu li a:hover {
-  color: #125a8c;
-}
-
 .inicio-flex {
   display: flex;
   flex-direction: row;
@@ -278,22 +283,23 @@ footer {
 .inicio-menu {
   flex: 0 0 auto;
   align-items: flex-start;
-  margin-left: 32px;
+  margin-left: 24px;
   padding-left: 0;
   list-style: none;
   position: relative;
   left: 0;
-  gap: 22px;
-  background: #2596be; /* Igual que navbar */
+  gap: 18px;
+  background: #2596be;
   border-radius: 18px;
   box-shadow: 0 2px 12px rgba(25,118,210,0.08);
   padding: 28px 22px 28px 22px;
 }
 
 .inicio-menu li {
-  margin-bottom: 12px;
+  margin-bottom: 0;
   position: relative;
   padding-left: 32px;
+  font-size: 1.1rem;
 }
 
 .inicio-menu li::before {
@@ -301,14 +307,14 @@ footer {
   position: absolute;
   left: 0;
   top: 0;
-  color: #1976d2; /* Igual que navbar texto */
+  color: #1976d2;
   font-size: 1.1em;
   line-height: 1.2;
   transition: color 0.2s;
 }
 
 .inicio-menu li a {
-  color: #fff; /* Blanco como en navbar */
+  color: #fff;
   text-decoration: none;
   font-weight: 600;
   font-size: 1.13rem;
@@ -320,7 +326,7 @@ footer {
 }
 
 .inicio-menu li a:hover {
-  background: #1976d2; /* Azul navbar */
+  background: #1976d2;
   color: #fff;
   box-shadow: 0 2px 8px rgba(25,118,210,0.15);
 }
@@ -328,9 +334,9 @@ footer {
 /* Texto de inicio más vistoso */
 .inicio-texto {
   flex: 1 1 0;
-  margin-left: 120px;
+  margin-left: 140px;
   max-width: 600px;
-  background: rgba(37,150,190,0.18); /* Suave #2596be */
+  background: rgba(37,150,190,0.18);
   border-radius: 18px;
   box-shadow: 0 2px 16px rgba(25,118,210,0.10);
   padding: 36px 38px 32px 38px;
@@ -367,7 +373,7 @@ footer {
 }
 
 .eec-destacado {
-  color: #e59537;
+  color: #fb8e17;
   font-weight: bold;
 }
 
@@ -407,10 +413,18 @@ nav .btn:hover {
 
 /* Responsive */
 @media (max-width: 900px) {
+  nav {
+    padding: 0.5rem 1rem;
+  }
+  section {
+    padding-top: 80px;
+    padding-bottom: 40px;
+  }
   #inicio {
     flex-direction: column;
     text-align: center;
     gap: 20px;
+    padding: 40px 0 30px 0;
   }
   #inicio .inicio-texto,
   #inicio .carousel {
@@ -425,19 +439,49 @@ nav .btn:hover {
   }
   .inicio-flex {
     flex-direction: column;
-    gap: 30px;
+    gap: 20px;
     align-items: center;
+    width: 100%;
+    max-width: 98vw;
   }
   .inicio-texto {
     margin-left: 0;
-    max-width: 95vw;
-    padding: 24px 10px 24px 10px;
+    max-width: 98vw;
+    padding: 18px 5px;
   }
   .inicio-menu {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
     margin-left: 0;
-    padding: 18px 10px 18px 10px;
+    padding: 10px 0;
+    gap: 10px;
+    width: 100%;
+    background: #2596be;
+    border-radius: 12px;
   }
-  .inicio-titulo {
-    font-size: 1.3rem;
+  .inicio-menu li {
+    margin-bottom: 0;
+    padding-left: 18px;
+    font-size: 1rem;
+  }
+  .inicio-logo {
+    max-width: 120px;
+  }
+  .card-container {
+    grid-template-columns: 1fr;
+    gap: 18px;
+    align-items: center;
+  }
+  .card {
+    width: 95vw;
+    min-width: unset;
+    max-width: 400px;
+  }
+  .btn, .btn.btn-destacado, nav .btn {
+    width: 100%;
+    font-size: 1rem;
+    padding: 12px 0;
+    margin-top: 10px;
   }
 }
