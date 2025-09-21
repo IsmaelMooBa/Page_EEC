@@ -27,3 +27,13 @@ document.addEventListener('DOMContentLoaded', function() {
   showImage(current);
   setInterval(nextImage, 5000); // Cambia a 5 segundos
 });
+
+function copiarCorreo() {
+  navigator.clipboard.writeText('easyenglishcool6@gmail.com').then(function() {
+    const msg = document.getElementById('copiado-msg');
+    msg.style.display = 'inline-block';
+    setTimeout(() => {
+      msg.style.display = 'none';
+    }, 1800);
+  });
+}
