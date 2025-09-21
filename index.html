@@ -26,7 +26,7 @@
         <li><a href="#cursos">Cursos</a></li>
         <li><a href="#becas">Becas</a></li>
         <li><a href="#eventos">Eventos</a></li>
-        <li><a href="#ayuda">Ayuda</a></li>
+        <!-- <li><a href="#ayuda">Ayuda</a></li> -->
       </ul>
       <div class="inicio-texto">
         <img src="img/image-removebg-preview.png" alt="Imagen representativa" class="inicio-logo">
@@ -52,7 +52,7 @@
   <!-- Sobre Nosotros -->
   <section id="sobre-nosotros">
     <h2>Sobre Nosotros</h2>
-    <p>Con años de experiencia enseñando inglés, nuestra misión es ayudarte a cumplir tus metas académicas, profesionales y personales con un aprendizaje de calidad.</p>
+    <!-- Cartas de redes sociales, ubicación y contactos -->
     <div class="card-container">
       <div class="card">
         <h3>Redes Sociales</h3>
@@ -84,6 +84,21 @@
         </p>
       </div>
     </div>
+    <!-- Cartas pequeñas de misión, visión y valores -->
+    <div class="mini-cards-mvv">
+      <div class="mini-card-mvv">
+        <h4>Misión</h4>
+        <p>Brindar educación en inglés de calidad, accesible y personalizada, ayudando a nuestros estudiantes a alcanzar sus metas académicas, profesionales y personales.</p>
+      </div>
+      <div class="mini-card-mvv">
+        <h4>Visión</h4>
+        <p>Ser la academia de inglés líder en la región, reconocida por su innovación, excelencia educativa y compromiso con el desarrollo integral de cada alumno.</p>
+      </div>
+      <div class="mini-card-mvv">
+        <h4>Valores</h4>
+        <p>Compromiso, respeto, honestidad, pasión por la enseñanza y mejora continua para transformar vidas a través del aprendizaje del inglés.</p>
+      </div>
+    </div>
   </section>
 
   <!-- Cursos -->
@@ -95,34 +110,56 @@
         <img src="img/Pelota_AzAm-removebg-preview.png" alt="Infantil">
         <h3>Niños</h3>
         <p>Clases divertidas y dinámicas para los más pequeños.</p>
+        <button class="btn" onclick="mostrarModalidad('ninos')">Ver modalidad</button>
       </div>
       <div class="card">
         <img src="img/Sombrero_AzAm-removebg-preview.png" alt="Jóvenes">
         <h3>Jóvenes</h3>
         <p>Refuerza tu inglés escolar y prepárate para el futuro.</p>
+        <button class="btn" onclick="mostrarModalidad('jovenes')">Ver modalidad</button>
       </div>
       <div class="card">
         <img src="img/Maletin_AzAm-removebg-preview.png" alt="Adultos">
         <h3>Adultos</h3>
         <p>Programas flexibles para el trabajo, viajes y vida diaria.</p>
+        <button class="btn" onclick="mostrarModalidad('adultos')">Ver modalidad</button>
       </div>
     </div>
   </section>
 
+  <!-- Modal para mostrar la información de modalidad de cursos -->
+  <div id="modal-modalidad" class="modal-modalidad" style="display:none;">
+    <div class="modal-contenido-modalidad">
+      <span class="modal-cerrar" onclick="cerrarModalidad()">&times;</span>
+      <div id="modal-info"></div>
+    </div>
+  </div>
+
   <!-- Becas -->
   <section id="becas">
     <h2>Becas</h2>
+    <p>Conoce las oportunidades y apoyos disponibles:</p>
     <div class="card-container">
       <div class="card">
         <h3>Descuentos</h3>
         <p>Aprovecha descuentos especiales en la inscripción y mensualidades de nuestros cursos.</p>
+        <button class="btn" onclick="mostrarModalidadBeca('descuentos')">Ver detalles</button>
       </div>
       <div class="card">
         <h3>Universidades Enlazadas</h3>
         <p>Consulta las universidades con las que tenemos convenios para facilitar tu acceso a becas y apoyos.</p>
+        <button class="btn" onclick="mostrarModalidadBeca('universidades')">Ver detalles</button>
       </div>
     </div>
   </section>
+
+  <!-- Modal para mostrar la información de becas -->
+  <div id="modal-beca" class="modal-modalidad" style="display:none;">
+    <div class="modal-contenido">
+      <span class="modal-cerrar" onclick="cerrarModalidadBeca()">&times;</span>
+      <div id="modal-info-beca"></div>
+    </div>
+  </div>
 
   <!-- Eventos -->
   <section id="eventos">
@@ -139,12 +176,12 @@
     </div>
   </section>
 
-  <!-- Ayuda -->
+  <!-- Ayuda 
   <section id="ayuda">
     <h2>Ayuda</h2>
     <p>¿Tienes dudas? Escríbenos y con gusto te ayudamos.</p>
     <a href="mailto:tuemail@ejemplo.com" class="btn">Contáctanos</a>
-  </section>
+  </section> -->
 
   <!-- Footer -->
   <footer>
