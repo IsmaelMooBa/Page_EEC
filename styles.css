@@ -12,39 +12,44 @@ body {
   color: #333;
 }
 
-/* Navbar */
+/* Navbar solo con botón alineado a la derecha */
 nav {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
-  background: #7cb3bf; /* Azul suave */
+  background: #2596be;
   padding: 1rem 2rem;
   z-index: 1000;
   box-shadow: 0 2px 10px rgba(0,0,0,0.15);
-}
-
-nav ul {
   display: flex;
-  justify-content: center;
-  list-style: none;
+  justify-content: flex-end; /* Botón a la derecha */
+  align-items: center;
 }
 
-nav ul li {
-  margin: 0 20px;
+/* Menú de navegación en sección inicio como lista vertical y letras blancas */
+.inicio-menu {
+  display: flex;
+  flex-direction: column;    /* Lista vertical */
+  align-items: flex-start;   /* Alinea a la izquierda */
+  list-style: disc inside;   /* Muestra viñetas */
+  margin-bottom: 30px;
+  gap: 10px;
+  padding: 0 0 0 20px;
+  background: #2596be;
 }
 
-nav ul li a {
-  color: white;
+.inicio-menu li a {
+  color: #fff;               /* Letras blancas */
   text-decoration: none;
-  font-weight: bold;
+  font-weight: 500;
   font-size: 1.1rem;
-  transition: color 0.3s, transform 0.2s;
+  transition: color 0.2s;
 }
 
-nav ul li a:hover {
-  color: rgba(249, 145, 23, 1); /* Naranja original */
-  transform: scale(1.1);
+.inicio-menu li a:hover {
+  background: #1976d2;
+  color: #fff;
 }
 
 /* Secciones */
@@ -55,8 +60,11 @@ section {
 }
 
 #inicio {
-  background: #7cb3bf;
-  color: white;
+  background: linear-gradient(120deg, #1976d2 0%, #2596be 100%);
+  color: #fff;
+  padding: 70px 0 60px 0;
+  min-height: 60vh;
+  box-shadow: 0 8px 32px rgba(25,118,210,0.08);
   display: flex;
   flex-direction: column;   /* Coloca los elementos en columna */
   justify-content: center;
@@ -170,7 +178,7 @@ p {
 }
 
 .card h3 {
-  color: #e59537; /* Naranja cálido */
+  color: #fb8e17; /* Naranja brillante */
   margin-bottom: 10px;
 }
 
@@ -233,7 +241,171 @@ footer {
 .carousel-btn.prev { left: 10px; }
 .carousel-btn.next { right: 10px; }
 
-/* Responsive para pantallas pequeñas */
+/* Inicio - Sección de menú */
+.inicio-menu {
+  display: flex;
+  justify-content: center;
+  list-style: none;
+  margin-bottom: 30px;
+  gap: 30px;
+  padding: 0;
+}
+
+.inicio-menu li a {
+  color: #1976d2;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 1rem;
+  transition: color 0.2s;
+}
+
+.inicio-menu li a:hover {
+  color: #125a8c;
+}
+
+.inicio-flex {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 60px;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Lista pegada pero separada un poco de la esquina */
+.inicio-menu {
+  flex: 0 0 auto;
+  align-items: flex-start;
+  margin-left: 32px;
+  padding-left: 0;
+  list-style: none;
+  position: relative;
+  left: 0;
+  gap: 22px;
+  background: #2596be; /* Igual que navbar */
+  border-radius: 18px;
+  box-shadow: 0 2px 12px rgba(25,118,210,0.08);
+  padding: 28px 22px 28px 22px;
+}
+
+.inicio-menu li {
+  margin-bottom: 12px;
+  position: relative;
+  padding-left: 32px;
+}
+
+.inicio-menu li::before {
+  content: "▶";
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: #1976d2; /* Igual que navbar texto */
+  font-size: 1.1em;
+  line-height: 1.2;
+  transition: color 0.2s;
+}
+
+.inicio-menu li a {
+  color: #fff; /* Blanco como en navbar */
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1.13rem;
+  letter-spacing: 0.5px;
+  padding: 6px 18px 6px 0;
+  border-radius: 8px;
+  transition: background 0.2s, color 0.2s, box-shadow 0.2s;
+  display: inline-block;
+}
+
+.inicio-menu li a:hover {
+  background: #1976d2; /* Azul navbar */
+  color: #fff;
+  box-shadow: 0 2px 8px rgba(25,118,210,0.15);
+}
+
+/* Texto de inicio más vistoso */
+.inicio-texto {
+  flex: 1 1 0;
+  margin-left: 120px;
+  max-width: 600px;
+  background: rgba(37,150,190,0.18); /* Suave #2596be */
+  border-radius: 18px;
+  box-shadow: 0 2px 16px rgba(25,118,210,0.10);
+  padding: 36px 38px 32px 38px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.inicio-logo {
+  max-width: 180px;
+  width: 100%;
+  margin-bottom: 18px;
+  border-radius: 12px;
+  box-shadow: 0 2px 12px rgba(25,118,210,0.10);
+  background: #fff;
+  padding: 8px;
+}
+
+.inicio-titulo {
+  font-size: 2.2rem;
+  font-weight: 800;
+  margin-bottom: 18px;
+  text-shadow: 0 2px 8px rgba(25,118,210,0.10);
+  color: #fff;
+  text-align: center;
+}
+
+.inicio-desc {
+  font-size: 1.15rem;
+  margin-bottom: 22px;
+  color: #f3f3f3;
+  text-align: center;
+  line-height: 1.6;
+}
+
+.eec-destacado {
+  color: #e59537;
+  font-weight: bold;
+}
+
+.eec-beneficio {
+  background: #fb8e17;
+  color: #fff;
+  border-radius: 8px;
+  padding: 2px 10px;
+  margin: 0 2px;
+  font-size: 0.98em;
+  font-weight: 600;
+  display: inline-block;
+}
+
+.btn.btn-destacado,
+nav .btn {
+  background: #fb8e17;
+  color: #fff;
+  font-weight: 700;
+  font-size: 1.1rem;
+  padding: 10px 32px;
+  border-radius: 22px;
+  margin-top: 10px;
+  box-shadow: 0 2px 12px rgba(251,142,23,0.15);
+  transition: background 0.2s, box-shadow 0.2s;
+  border: none;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.btn.btn-destacado:hover,
+nav .btn:hover {
+  background: #2596be;
+  color: #fff;
+  box-shadow: 0 4px 18px rgba(37,150,190,0.18);
+}
+
+/* Responsive */
 @media (max-width: 900px) {
   #inicio {
     flex-direction: column;
@@ -250,5 +422,22 @@ footer {
   #inicio p,
   #inicio .btn {
     text-align: center;
+  }
+  .inicio-flex {
+    flex-direction: column;
+    gap: 30px;
+    align-items: center;
+  }
+  .inicio-texto {
+    margin-left: 0;
+    max-width: 95vw;
+    padding: 24px 10px 24px 10px;
+  }
+  .inicio-menu {
+    margin-left: 0;
+    padding: 18px 10px 18px 10px;
+  }
+  .inicio-titulo {
+    font-size: 1.3rem;
   }
 }
