@@ -7,6 +7,7 @@
   <link rel="stylesheet" href="styles.css">
   <script src="scripts.js" defer></script>
   <link rel="icon" type="image/png" href="img/Logotipo_EEC-removebg-preview.png">
+  
 </head>
 <body>
 
@@ -19,8 +20,20 @@
   <!-- Inicio -->
   <section id="inicio">
     <div class="inicio-flex">
-      <!-- Menú de navegación vistoso -->
-      <ul class="inicio-menu">
+      <!-- Menú de navegación desplegable (versión móvil) -->
+      <div class="dropdown">
+        <button class="dropdown-toggle">Menú de Navegación</button>
+        <div class="dropdown-menu">
+          <a href="#inicio">Inicio</a>
+          <a href="#sobre-nosotros">Sobre Nosotros</a>
+          <a href="#cursos">Cursos</a>
+          <a href="#becas">Becas</a>
+          <a href="#eventos">Eventos</a>
+        </div>
+      </div>
+      
+      <!-- Menú de navegación vistoso (versión escritorio) -->
+      <ul class="inicio-menu" style="display: none;">
         <li><a href="#inicio">Inicio</a></li>
         <li><a href="#sobre-nosotros">Sobre Nosotros</a></li>
         <li><a href="#cursos">Cursos</a></li>
@@ -36,19 +49,9 @@
         </p>
       </div>
     </div>
-    <!--
-    <div class="carousel">
-      <div class="carousel-images">
-        <img src="img/Firulais.png" alt="Imagen 1" class="active">
-        <img src="img/Bistec.png" alt="Imagen 2">
-        <img src="img/Gingo.png" alt="Imagen 3">
-        <img src="img/Nice.png" alt="Imagen 4">
-        <img src="img/Overol.png" alt="Imagen 5">
-      </div>
-    </div>
-    -->
   </section>
 
+  <!-- Resto del código se mantiene igual -->
   <!-- Sobre Nosotros -->
   <section id="sobre-nosotros">
     <h2>Sobre Nosotros</h2>
@@ -176,17 +179,9 @@
     </div>
   </section>
 
-  <!-- Ayuda 
-  <section id="ayuda">
-    <h2>Ayuda</h2>
-    <p>¿Tienes dudas? Escríbenos y con gusto te ayudamos.</p>
-    <a href="mailto:tuemail@ejemplo.com" class="btn">Contáctanos</a>
-  </section> -->
-
   <!-- Footer -->
   <footer>
     <p>© 2025 Clases de Inglés. Todos los derechos reservados.</p>
   </footer>
-
 </body>
 </html>
