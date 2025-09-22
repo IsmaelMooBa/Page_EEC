@@ -451,8 +451,13 @@ p {
 }
 
 @keyframes fadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
 }
 
 .modal-contenido {
@@ -471,8 +476,15 @@ p {
 }
 
 @keyframes modalPop {
-  0% { transform: scale(0.8) translateY(50px); opacity: 0; }
-  100% { transform: scale(1) translateY(0); opacity: 1; }
+  0% {
+    transform: scale(0.8) translateY(50px);
+    opacity: 0;
+  }
+
+  100% {
+    transform: scale(1) translateY(0);
+    opacity: 1;
+  }
 }
 
 .modal-cerrar {
@@ -629,8 +641,15 @@ p {
 }
 
 @keyframes slideDown {
-  from { opacity: 0; transform: translateY(-10px); }
-  to { opacity: 1; transform: translateY(0); }
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .dropdown-menu a {
@@ -706,11 +725,11 @@ footer p {
   .inicio-flex {
     gap: 40px;
   }
-  
+
   .inicio-titulo {
     font-size: 2.5rem;
   }
-  
+
   .inicio-texto {
     margin-left: 0;
     padding: 30px;
@@ -721,20 +740,20 @@ footer p {
   nav {
     padding: 0.8rem 1.5rem;
   }
-  
+
   section {
     padding: 80px 15px;
   }
-  
+
   #inicio {
     padding: 100px 0 60px;
   }
-  
+
   .inicio-flex {
     flex-direction: column;
     gap: 30px;
   }
-  
+
   .inicio-menu {
     flex-direction: row;
     flex-wrap: wrap;
@@ -743,37 +762,39 @@ footer p {
     padding: 15px;
     width: 100%;
   }
-  
+
   .inicio-menu li {
     padding-left: 20px;
     font-size: 1rem;
   }
-  
+
   .card-container {
     grid-template-columns: 1fr;
     gap: 20px;
   }
-  
+
   .card {
     max-width: 500px;
     margin: 0 auto;
   }
-  
+
   .philosophy-grid {
     grid-template-columns: 1fr;
     gap: 25px;
   }
-  
-  .btn, .btn.btn-destacado, nav .btn {
+
+  .btn,
+  .btn.btn-destacado,
+  nav .btn {
     width: 100%;
     max-width: 300px;
     margin: 15px auto;
   }
-  
+
   h2 {
     font-size: 2rem;
   }
-  
+
   .inicio-titulo {
     font-size: 2.2rem;
   }
@@ -783,23 +804,23 @@ footer p {
   .inicio-titulo {
     font-size: 2rem;
   }
-  
+
   .inicio-desc {
     font-size: 1.1rem;
   }
-  
+
   .modal-contenido {
     padding: 30px 20px;
   }
-  
+
   .philosophy-card {
     padding: 25px 20px;
   }
-  
+
   .platform-features {
     padding: 30px 20px;
   }
-  
+
   .features-grid {
     grid-template-columns: 1fr;
   }
@@ -811,24 +832,24 @@ footer p {
     flex-direction: column;
     gap: 10px;
   }
-  
+
   .nav-logo {
     margin-right: 0;
     margin-bottom: 10px;
   }
-  
+
   .inicio-titulo {
     font-size: 1.8rem;
   }
-  
+
   .inicio-texto {
     padding: 20px;
   }
-  
+
   h2 {
     font-size: 1.8rem;
   }
-  
+
   .dropdown-toggle {
     min-width: 200px;
     font-size: 1rem;
@@ -840,7 +861,7 @@ footer p {
   .dropdown {
     display: none;
   }
-  
+
   .inicio-menu {
     display: flex !important;
   }
@@ -850,7 +871,7 @@ footer p {
   .inicio-menu {
     display: none !important;
   }
-  
+
   .dropdown {
     display: inline-block;
   }
@@ -887,6 +908,7 @@ footer p {
     opacity: 0;
     transform: translateY(30px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
@@ -899,6 +921,7 @@ footer p {
 
 /* ===== MEJORAS DE ACCESIBILIDAD ===== */
 @media (prefers-reduced-motion: reduce) {
+
   *,
   *::before,
   *::after {
@@ -925,4 +948,57 @@ input:focus-visible {
     --color-accent: #c35600;
     --color-text: #000;
   }
+}
+
+/* Estilos adicionales para las nuevas secciones */
+.modalidad-badge {
+  background: #fb8e17;
+  color: white;
+  padding: 5px 12px;
+  border-radius: 15px;
+  font-size: 0.9rem;
+  font-weight: bold;
+  display: inline-block;
+  margin: 10px 0;
+}
+
+.social-section {
+  text-align: center;
+  margin-top: 40px;
+  padding: 30px;
+  background: #f8fafc;
+  border-radius: 15px;
+}
+
+.social-links {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  flex-wrap: wrap;
+  margin-top: 20px;
+}
+
+.social-btn {
+  padding: 12px 25px;
+  background: #1976d2;
+  color: white;
+  text-decoration: none;
+  border-radius: 25px;
+  transition: background 0.3s;
+}
+
+.social-btn:hover {
+  background: #155a9d;
+}
+
+/* Ajustes para las nuevas secciones */
+#modalidades,
+#plataforma,
+#nosotros,
+#contacto {
+  padding: 80px 20px;
+}
+
+#contacto .card-container {
+  margin-bottom: 40px;
 }
