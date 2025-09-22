@@ -7,7 +7,6 @@
   <link rel="stylesheet" href="styles.css">
   <script src="scripts.js" defer></script>
   <link rel="icon" type="image/png" href="img/Logotipo_EEC-removebg-preview.png">
-  
 </head>
 <body>
 
@@ -69,7 +68,7 @@
         <p>
           Av. 5 de Mayo 565, Tecámac Centro, Tecamac, 55740 Tecámac de Felipe Villanueva, Méx., Tecamac, Mexico 55 1696 6619<br>
           <br>
-          <a href="https://www.google.com/maps/place/Easy+English+Cool,+EEC/@19.7131143,-98.9770325,17z/data=!3m1!4b1!4m6!3m5!1s0x85d1ed38d0bcb79b:0xcd7a99f27e614948!8m2!3d19.7131143!4d-98.9744576!16s%2Fg%2F11xw7g3gnn?entry=ttu&g_ep=EgoyMDI1MDkxNy4wIKXMDSoASAFQAw%3D%3D" target="_blank">Ver en Google Maps</a>
+          <a href="https://www.google.com/maps/place/Easy+English+Cool,+EEC/@19.7131143,-98.9770325,17z/data=!3m1!4b1!4m6!3m5!1s0x85d1ed38d0bcb79b:0xcd7a99f27e614948!8m2!3d19.7131143!4d-98.9744576!16s%2Fg%2F11xw7g3gnn?entry=ttu&g_ep=EgoyMDI1MDkxNy.0IKXMDSoASAFQAw%3D%3D" target="_blank">Ver en Google Maps</a>
         </p>
       </div>
       <div class="card">
@@ -113,30 +112,22 @@
         <img src="img/Pelota_AzAm-removebg-preview.png" alt="Infantil">
         <h3>Niños</h3>
         <p>Clases divertidas y dinámicas para los más pequeños.</p>
-        <button class="btn" onclick="mostrarModalidad('ninos')">Ver modalidad</button>
+        <button class="btn" onclick="mostrarModal('ninos')">Ver modalidad</button>
       </div>
       <div class="card">
         <img src="img/Sombrero_AzAm-removebg-preview.png" alt="Jóvenes">
         <h3>Jóvenes</h3>
         <p>Refuerza tu inglés escolar y prepárate para el futuro.</p>
-        <button class="btn" onclick="mostrarModalidad('jovenes')">Ver modalidad</button>
+        <button class="btn" onclick="mostrarModal('jovenes')">Ver modalidad</button>
       </div>
       <div class="card">
         <img src="img/Maletin_AzAm-removebg-preview.png" alt="Adultos">
         <h3>Adultos</h3>
         <p>Programas flexibles para el trabajo, viajes y vida diaria.</p>
-        <button class="btn" onclick="mostrarModalidad('adultos')">Ver modalidad</button>
+        <button class="btn" onclick="mostrarModal('adultos')">Ver modalidad</button>
       </div>
     </div>
   </section>
-
-  <!-- Modal para mostrar la información de modalidad de cursos -->
-  <div id="modal-modalidad" class="modal-modalidad" style="display:none;">
-    <div class="modal-contenido-modalidad">
-      <span class="modal-cerrar" onclick="cerrarModalidad()">&times;</span>
-      <div id="modal-info"></div>
-    </div>
-  </div>
 
   <!-- Becas -->
   <section id="becas">
@@ -146,21 +137,21 @@
       <div class="card">
         <h3>Descuentos</h3>
         <p>Aprovecha descuentos especiales en la inscripción y mensualidades de nuestros cursos.</p>
-        <button class="btn" onclick="mostrarModalidadBeca('descuentos')">Ver detalles</button>
+        <button class="btn" onclick="mostrarModal('descuentos')">Ver detalles</button>
       </div>
       <div class="card">
         <h3>Universidades Enlazadas</h3>
         <p>Consulta las universidades con las que tenemos convenios para facilitar tu acceso a becas y apoyos.</p>
-        <button class="btn" onclick="mostrarModalidadBeca('universidades')">Ver detalles</button>
+        <button class="btn" onclick="mostrarModal('universidades')">Ver detalles</button>
       </div>
     </div>
   </section>
 
-  <!-- Modal para mostrar la información de becas -->
-  <div id="modal-beca" class="modal-modalidad" style="display:none;">
+  <!-- Modal único para mostrar información -->
+  <div id="modal-unico" class="modal" style="display:none;">
     <div class="modal-contenido">
-      <span class="modal-cerrar" onclick="cerrarModalidadBeca()">&times;</span>
-      <div id="modal-info-beca"></div>
+      <span class="modal-cerrar" onclick="cerrarModal()">&times;</span>
+      <div id="modal-info"></div>
     </div>
   </div>
 
