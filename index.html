@@ -19,25 +19,27 @@
   <!-- Inicio -->
   <section id="inicio">
     <div class="inicio-flex">
-      <!-- Menú de navegación desplegable (versión móvil) -->
+      <!-- Menú de navegación desplegable (versión móvil) - ORDENADO -->
       <div class="dropdown">
         <button class="dropdown-toggle">Menú de Navegación</button>
         <div class="dropdown-menu">
-          <a href="#inicio">Inicio</a>
-          <a href="#sobre-nosotros">Sobre Nosotros</a>
-          <a href="#cursos">Cursos</a>
-          <a href="#becas">Becas</a>
-          <a href="#eventos">Online</a>
+          <a href="#cursos">Cursos Presenciales/Online</a>
+          <a href="#modalidades">Modalidades de Estudio</a>
+          <a href="#plataforma">Plataforma Online</a>
+          <a href="#becas">Becas y Descuentos</a>
+          <a href="#nosotros">Sobre Nosotros</a>
+          <a href="#contacto">Contacto</a>
         </div>
       </div>
       
-      <!-- Menú de navegación vistoso (versión escritorio) -->
+      <!-- Menú de navegación vistoso (versión escritorio) - ORDENADO -->
       <ul class="inicio-menu" style="display: none;">
-        <li><a href="#inicio">Inicio</a></li>
-        <li><a href="#sobre-nosotros">Sobre Nosotros</a></li>
         <li><a href="#cursos">Cursos</a></li>
+        <li><a href="#modalidades">Modalidades</a></li>
+        <li><a href="#plataforma">Plataforma</a></li>
         <li><a href="#becas">Becas</a></li>
-        <li><a href="#eventos">Online</a></li>
+        <li><a href="#nosotros">Nosotros</a></li>
+        <li><a href="#contacto">Contacto</a></li>
       </ul>
       <div class="inicio-texto">
         <img src="img/image-removebg-preview.png" alt="Imagen representativa" class="inicio-logo">
@@ -49,131 +51,75 @@
     </div>
   </section>
 
-  <!-- Sobre Nosotros -->
-  <section id="sobre-nosotros">
-    <h2>Disponibilidad y Horarios</h2>
-    <!-- Cartas de redes sociales, ubicación y contactos -->
-    <div class="card-container">
-      <div class="card">
-        <h3>Redes Sociales</h3>
-        <p>
-          Síguenos en:<br>
-          <a href="https://www.facebook.com/profile.php?id=61580189236869" target="_blank">Facebook</a><br>
-        </p>
-      </div>
-      <div class="card">
-        <h3>Ubicación</h3>
-        <p>
-          Av. 5 de Mayo 565, Tecámac Centro, Tecamac, 55740 Tecámac de Felipe Villanueva, Méx., Tecamac, Mexico 55 1696 6619<br>
-          <br>
-          <a href="https://www.google.com/maps/place/Easy+English+Cool,+EEC/@19.7131143,-98.9770325,17z/data=!3m1!4b1!4m6!3m5!1s0x85d1ed38d0bcb79b:0xcd7a99f27e614948!8m2!3d19.7131143!4d-98.9744576!16s%2Fg%2F11xw7g3gnn?entry=ttu&g_ep=EgoyMDI1MDkxNy.0IKXMDSoASAFQAw%3D%3D" target="_blank">Ver en Google Maps</a>
-        </p>
-      </div>
-      <div class="card">
-        <h3>Contactos</h3>
-        <p>
-          <br>
-          Disponible 24/7 en:<br>
-          WhatsApp: 55 1696 6619<br>
-          Email: 
-          <span id="correo-eec" style="user-select: all; cursor: pointer; color: #1976d2; font-weight: bold;" onclick="copiarCorreo()">
-            easyenglishcool6@gmail.com
-          </span>
-          <span id="copiado-msg" style="display:none; margin-left:10px; color:#fff; background:#fb8e17; padding:4px 10px; border-radius:12px; font-size:0.95em; box-shadow:0 2px 8px rgba(0,0,0,0.15); vertical-align:middle;">
-            ¡Correo copiado!
-          </span>
-        </p>
-      </div>
-    </div>
-    
-    <!-- Nuestra Filosofía - Misión, Visión y Valores con nuevo diseño -->
-    <div class="philosophy-section">
-      <h2>Nuestra Filosofía</h2>
-      <div class="philosophy-grid">
-        <div class="philosophy-card mision">
-          <span class="philosophy-icon">🎯</span>
-          <h3>Misión</h3>
-          <p>Facilitar el camino hacia el dominio del idioma inglés, optimizando el tiempo de aprendizaje de nuestros estudiantes. Nos comprometemos a proporcionar un ambiente educativo innovador y dinámico que fomente la fluidez y la confianza en el uso del idioma en un mundo cada vez más globalizado.</p>
-        </div>
-        
-        <div class="philosophy-card vision">
-          <span class="philosophy-icon">🚀</span>
-          <h3>Visión</h3>
-          <p>Ser reconocidos por la enseñanza en el idioma, excelencia académica y la eficiencia en el aprendizaje, donde cada estudiante logra la fluidez bilingüe en un tiempo récord, contribuyendo así al éxito personal y profesional de nuestros alumnos.</p>
-        </div>
-        
-        <div class="philosophy-card valores">
-          <span class="philosophy-icon">💎</span>
-          <h3>Valores</h3>
-          <p>Los pilares que guían cada aspecto de nuestra institución educativa:</p>
-          <ul class="values-list">
-            <li><strong>Eficiencia:</strong> Maximizamos tu tiempo de aprendizaje</li>
-            <li><strong>Innovación:</strong> Métodos de enseñanza de vanguardia</li>
-            <li><strong>Diversidad:</strong> Ambiente inclusivo para todos</li>
-            <li><strong>Compromiso:</strong> Con tu éxito en el aprendizaje</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Resto de las secciones (Cursos, Becas, Plataforma Online) se mantienen igual -->
-  <!-- Cursos -->
+  <!-- CURSOS - Ahora es la primera sección después del inicio -->
   <section id="cursos">
-    <h2>Cursos de Inglés</h2>
-    <p>Encuentra el curso ideal para ti:</p>
+    <h2>Cursos de Inglés Presenciales y Online</h2>
+    <p>Encuentra el curso ideal para ti según tu edad y necesidades:</p>
     <div class="card-container">
       <div class="card">
         <img src="img/Pelota_AzAm-removebg-preview.png" alt="Infantil">
-        <h3>Niños</h3>
-        <h3>Presencial / Online</h3>
-        <p>Clases divertidas y dinámicas para los más pequeños.</p>
-        <button class="btn" onclick="mostrarModal('ninos')">Ver modalidad</button>
+        <h3>Niños (5-12 años)</h3>
+        <div class="modalidad-badge">Presencial / Online</div>
+        <p>Clases divertidas y dinámicas con métodos lúdicos para los más pequeños. Aprendizaje natural a través de juegos, canciones y actividades interactivas.</p>
+        <button class="btn" onclick="mostrarModal('ninos')">Ver detalles</button>
       </div>
       <div class="card">
         <img src="img/Sombrero_AzAm-removebg-preview.png" alt="Jóvenes">
-        <h3>Jóvenes</h3>
-        <h3>Presencial / Online</h3>
-        <p>Refuerza tu inglés escolar y prepárate para el futuro.</p>
-        <button class="btn" onclick="mostrarModal('jovenes')">Ver modalidad</button>
+        <h3>Jóvenes (13-17 años)</h3>
+        <div class="modalidad-badge">Presencial / Online</div>
+        <p>Refuerza tu inglés escolar y prepárate para el futuro. Programas alineados con planes de estudio y preparación para certificaciones internacionales.</p>
+        <button class="btn" onclick="mostrarModal('jovenes')">Ver detalles</button>
       </div>
       <div class="card">
         <img src="img/Maletin_AzAm-removebg-preview.png" alt="Adultos">
-        <h3>Adultos</h3>
-        <p>Programas flexibles para el trabajo, viajes y vida diaria.</p>
-        <button class="btn" onclick="mostrarModal('adultos')">Ver modalidad</button>
+        <h3>Adultos (18+ años)</h3>
+        <div class="modalidad-badge">Presencial / Online</div>
+        <p>Programas flexibles para el trabajo, viajes y vida diaria. Enfoque comunicativo con situaciones reales y vocabulario específico según tus necesidades.</p>
+        <button class="btn" onclick="mostrarModal('adultos')">Ver detalles</button>
       </div>
     </div>
   </section>
 
-  <!-- Becas -->
-  <section id="becas">
-    <h2>Becas</h2>
-    <p>Conoce las oportunidades y apoyos disponibles:</p>
+  <!-- MODALIDADES DE ESTUDIO - Nueva sección -->
+  <section id="modalidades">
+    <h2>Modalidades de Estudio</h2>
+    <p>Elige la modalidad que mejor se adapte a tu estilo de vida y preferencias de aprendizaje</p>
     <div class="card-container">
       <div class="card">
-        <h3>Descuentos</h3>
-        <p>Aprovecha descuentos especiales en la inscripción y mensualidades de nuestros cursos.</p>
-        <button class="btn" onclick="mostrarModal('descuentos')">Ver detalles</button>
+        <h3>🏫 Presencial</h3>
+        <p>Clases en nuestro centro educativo con instalaciones modernas y equipadas.</p>
+        <ul>
+          <li>Interacción cara a cara con teachers</li>
+          <li>Ambiente de inmersión total</li>
+          <li>Instalaciones con tecnología educativa</li>
+          <li>Grupos reducidos (máx. 8 estudiantes)</li>
+        </ul>
       </div>
       <div class="card">
-        <h3>Universidades Enlazadas</h3>
-        <p>Consulta las universidades con las que tenemos convenios para facilitar tu acceso a becas y apoyos.</p>
-        <button class="btn" onclick="mostrarModal('universidades')">Ver detalles</button>
+        <h3>💻 100% Online</h3>
+        <p>Clases en vivo desde la comodidad de tu hogar u oficina.</p>
+        <ul>
+          <li>Plataforma interactiva especializada</li>
+          <li>Horarios flexibles (mañana, tarde, noche)</li>
+          <li>Acceso a grabaciones de las clases</li>
+          <li>Material digital incluido</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>🔀 Híbrido</h3>
+        <p>Combina clases presenciales con sesiones online según tu conveniencia.</p>
+        <ul>
+          <li>Flexibilidad para cambiar modalidad</li>
+          <li>Mismo teacher y grupo</li>
+          <li>Ideal para imprevistos o viajes</li>
+          <li>Manten tu ritmo de aprendizaje</li>
+        </ul>
       </div>
     </div>
   </section>
 
-  <!-- Modal único para mostrar información -->
-  <div id="modal-unico" class="modal" style="display:none;">
-    <div class="modal-contenido">
-      <span class="modal-cerrar" onclick="cerrarModal()">&times;</span>
-      <div id="modal-info"></div>
-    </div>
-  </div>
-
-  <!-- Plataforma en Línea -->
-  <section id="eventos">
+  <!-- PLATAFORMA EN LÍNEA -->
+  <section id="plataforma">
     <h2>Plataforma de Aprendizaje Online</h2>
     <p>Accede a nuestras clases en línea con la más moderna tecnología educativa</p>
     <div class="card-container">
@@ -184,6 +130,7 @@
           <li>Clases en vivo por las mañanas, tardes y noches</li>
           <li>Acceso a material grabado las 24/7</li>
           <li>Sesiones los fines de semana</li>
+          <li>Diferentes zonas horarias disponibles</li>
         </ul>
       </div>
       <div class="card">
@@ -193,7 +140,7 @@
           <li>Aulas virtuales en tiempo real</li>
           <li>Pizarras digitales colaborativas</li>
           <li>Salas de breakout para prácticas</li>
-          <li>Chat and forums for discussion</li>
+          <li>Chat y foros de discusión</li>
         </ul>
       </div>
       <div class="card">
@@ -229,12 +176,179 @@
         </div>
       </div>
     </div>
-    <a href="#cursos" class="btn" style="margin-top: 30px;">¡Inscríbete Ahora!</a>
   </section>
+
+  <!-- BECAS -->
+  <section id="becas">
+    <h2>Becas y Descuentos Especiales</h2>
+    <p>Conoce las oportunidades y apoyos disponibles para hacer tu educación más accesible</p>
+    <div class="card-container">
+      <div class="card">
+        <h3>🎓 Descuentos Estudiantiles</h3>
+        <p>Aprovecha descuentos especiales en la inscripción y mensualidades de nuestros cursos.</p>
+        <ul>
+          <li>20% de descuento para estudiantes</li>
+          <li>15% para trabajadores de servicios públicos</li>
+          <li>Promociones por temporada</li>
+          <li>Descuentos por referidos</li>
+        </ul>
+        <button class="btn" onclick="mostrarModal('descuentos')">Ver todos los descuentos</button>
+      </div>
+      <div class="card">
+        <h3>🏫 Universidades Enlazadas</h3>
+        <p>Consulta las universidades con las que tenemos convenios para facilitar tu acceso a becas y apoyos.</p>
+        <ul>
+          <li>Programas de becas exclusivos</li>
+          <li>Reconocimiento de créditos</li>
+          <li>Certificaciones conjuntas</li>
+          <li>Eventos académicos especiales</li>
+        </ul>
+        <button class="btn" onclick="mostrarModal('universidades')">Ver universidades</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- SOBRE NOSOTROS -->
+  <section id="nosotros">
+    <h2>Nuestra Filosofía Educativa</h2>
+    <div class="philosophy-grid">
+      <div class="philosophy-card mision">
+        <span class="philosophy-icon">🎯</span>
+        <h3>Misión</h3>
+        <p>Facilitar el camino hacia el dominio del idioma inglés, optimizando el tiempo de aprendizaje de nuestros estudiantes. Nos comprometemos a proporcionar un ambiente educativo innovador y dinámico que fomente la fluidez y la confianza en el uso del idioma en un mundo cada vez más globalizado.</p>
+      </div>
+      
+      <div class="philosophy-card vision">
+        <span class="philosophy-icon">🚀</span>
+        <h3>Visión</h3>
+        <p>Ser reconocidos por la enseñanza en el idioma, excelencia académica y la eficiencia en el aprendizaje, donde cada estudiante logra la fluidez bilingüe en un tiempo récord, contribuyendo así al éxito personal y profesional de nuestros alumnos.</p>
+      </div>
+      
+      <div class="philosophy-card valores">
+        <span class="philosophy-icon">💎</span>
+        <h3>Valores</h3>
+        <p>Los pilares que guían cada aspecto de nuestra institución educativa:</p>
+        <ul class="values-list">
+          <li><strong>Eficiencia:</strong> Maximizamos tu tiempo de aprendizaje</li>
+          <li><strong>Innovación:</strong> Métodos de enseñanza de vanguardia</li>
+          <li><strong>Diversidad:</strong> Ambiente inclusivo para todos</li>
+          <li><strong>Compromiso:</strong> Con tu éxito en el aprendizaje</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACTO -->
+  <section id="contacto">
+    <h2>Contacto y Ubicación</h2>
+    <p>Estamos disponibles para resolver todas tus dudas y brindarte la información que necesites</p>
+    <div class="card-container">
+      <div class="card">
+        <h3>📍 Ubicación Presencial</h3>
+        <p>
+          Av. 5 de Mayo 565, Tecámac Centro, Tecamac, 55740 Tecámac de Felipe Villanueva, Méx., Mexico<br>
+          <br>
+          <a href="https://www.google.com/maps/place/Easy+English+Cool,+EEC/@19.7131143,-98.9770325,17z/data=!3m1!4b1!4m6!3m5!1s0x85d1ed38d0bcb79b:0xcd7a99f27e614948!8m2!3d19.7131143!4d-98.9744576!16s%2Fg%2F11xw7g3gnn?entry=ttu&g_ep=EgoyMDI5MDkxNy4wIKXMDSoASAFQAw%3D%3D" target="_blank" class="btn">Ver en Google Maps</a>
+        </p>
+      </div>
+      <div class="card">
+        <h3>📞 Contacto Directo</h3>
+        <p>
+          <strong>WhatsApp:</strong> 55 1696 6619<br>
+          <strong>Teléfono:</strong> 55 1696 6619<br>
+          <strong>Horario:</strong> Lunes a Domingo, 7:00 AM - 10:00 PM
+        </p>
+      </div>
+      <div class="card">
+        <h3>📧 Correo Electrónico</h3>
+        <p>
+          <strong>Informes:</strong> 
+          <span onclick="copiarCorreo()" style="cursor: pointer; color: #1976d2; font-weight: bold;">
+            easyenglishcool6@gmail.com
+          </span><br>
+          <strong>Soporte técnico:</strong>
+          <span onclick="copiarCorreo()" style="cursor: pointer; color: #1976d2; font-weight: bold;">
+            dianadiaz07162513@gmail.com
+          </span><br>
+        </p>
+      </div>
+    </div>
+    
+    <div class="social-section">
+      <h3>Síguenos en Redes Sociales</h3>
+      <div class="social-links">
+        <a href="https://www.facebook.com/profile.php?id=61580189236869" target="_blank" class="social-btn">Facebook</a>
+        <a href="#" class="social-btn">Instagram</a>
+        <a href="#" class="social-btn">YouTube</a>
+        <a href="#" class="social-btn">TikTok</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Modal único para mostrar información -->
+  <div id="modal-unico" class="modal" style="display:none;">
+    <div class="modal-contenido">
+      <span class="modal-cerrar" onclick="cerrarModal()">&times;</span>
+      <div id="modal-info"></div>
+    </div>
+  </div>
 
   <!-- Footer -->
   <footer>
-    <p>© 2025 Clases de Inglés. Todos los derechos reservados.</p>
+    <p>© 2025 Easy English Cool (EEC). Todos los derechos reservados.</p>
+    <p>Av. 5 de Mayo 565, Tecámac Centro, Estado de México | Tel: 55 1696 6619</p>
   </footer>
+
+  <style>
+    /* Estilos adicionales para las nuevas secciones */
+    .modalidad-badge {
+      background: #fb8e17;
+      color: white;
+      padding: 5px 12px;
+      border-radius: 15px;
+      font-size: 0.9rem;
+      font-weight: bold;
+      display: inline-block;
+      margin: 10px 0;
+    }
+    
+    .social-section {
+      text-align: center;
+      margin-top: 40px;
+      padding: 30px;
+      background: #f8fafc;
+      border-radius: 15px;
+    }
+    
+    .social-links {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      flex-wrap: wrap;
+      margin-top: 20px;
+    }
+    
+    .social-btn {
+      padding: 12px 25px;
+      background: #1976d2;
+      color: white;
+      text-decoration: none;
+      border-radius: 25px;
+      transition: background 0.3s;
+    }
+    
+    .social-btn:hover {
+      background: #155a9d;
+    }
+    
+    /* Ajustes para las nuevas secciones */
+    #modalidades, #plataforma, #nosotros, #contacto {
+      padding: 80px 20px;
+    }
+    
+    #contacto .card-container {
+      margin-bottom: 40px;
+    }
+  </style>
 </body>
 </html>
