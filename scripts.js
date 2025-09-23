@@ -264,9 +264,6 @@ function mostrarModal(tipo) {
                 <li>Evaluaciones periódicas y retroalimentación a padres</li>
                 <li>Método de inmersión gradual y natural</li>
             </ul>
-            <div style="margin-top: 20px; padding: 15px; background: #f8f9fa; border-radius: 10px;">
-                <strong>💡 Incluye:</strong> Acceso a plataforma online, material digital, certificado de progreso.
-            </div>
         `,
         jovenes: `
             <h2>Curso para Jóvenes (13-17 años)</h2>
@@ -278,9 +275,6 @@ function mostrarModal(tipo) {
                 <li>Grupos por nivel y edad</li>
                 <li>Tutorías personalizadas</li>
             </ul>
-            <div style="margin-top: 20px; padding: 15px; background: #f8f9fa; border-radius: 10px;">
-                <strong>🎯 Objetivo:</strong> Desarrollar fluidez conversacional y preparación académica.
-            </div>
         `,
         adultos: `
             <h2>Curso para Adultos (18+ años)</h2>
@@ -292,9 +286,6 @@ function mostrarModal(tipo) {
                 <li>Material actualizado y adaptado a tus objetivos</li>
                 <li>Preparación para entrevistas laborales</li>
             </ul>
-            <div style="margin-top: 20px; padding: 15px; background: #f8f9fa; border-radius: 10px;">
-                <strong>🚀 Enfoque:</strong> Inglés práctico para situaciones reales.
-            </div>
         `,
         descuentos: `
             <h2>Descuentos y Promociones</h2>
@@ -306,23 +297,13 @@ function mostrarModal(tipo) {
                 <li><strong>Descuento por referido:</strong> 10% por cada amigo que se inscriba</li>
                 <li><strong>Pago anticipado:</strong> 5% de descuento en pagos semestrales</li>
             </ul>
-            <div style="margin-top: 20px; padding: 15px; background: #e3f2fd; border-radius: 10px;">
-                <strong>📞 Contacta a nuestro equipo para validar tu elegibilidad</strong>
-            </div>
         `,
         universidades: `
             <h2>Universidades con Convenio</h2>
             <p>Tenemos convenios con instituciones educativas para facilitar el acceso a beneficios especiales.</p>
             <ul>
                 <li><strong>Universidad Politécnica de Tecámac (UPT)</strong></li>
-                <li>Programas de becas exclusivos</li>
-                <li>Reconocimiento de créditos educativos</li>
-                <li>Certificaciones conjuntas</li>
-                <li>Eventos académicos especiales</li>
             </ul>
-            <div style="margin-top: 20px; padding: 15px; background: #e8f5e8; border-radius: 10px;">
-                <strong>🎓 Presenta tu credencial estudiantil para acceder a los beneficios</strong>
-            </div>
         `
     };
     
