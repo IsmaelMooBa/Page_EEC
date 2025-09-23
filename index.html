@@ -13,7 +13,10 @@
   <!-- Navbar solo con un botón -->
   <nav>
     <img src="img/image-removebg-preview.png" alt="Imagen representativa" style="max-width:120px; width:100%; margin-bottom:8px; border-radius:12px;">
-    <a href="#cursos" class="btn">Inicia hoy tu curso</a>
+    <div class="nav-buttons">
+      <a href="#cursos" class="btn">Inicia hoy tu curso</a>
+      <a href="https://forms.gle/TU_FORMULARIO_AQUI" target="_blank" class="btn btn-examen">Haz tu examen de colocación aquí</a>
+    </div>
   </nav>
 
   <!-- Inicio -->
@@ -25,7 +28,7 @@
         <div class="dropdown-menu">
           <a href="#cursos">Cursos Presenciales/Online</a>
           <a href="#modalidades">Modalidades de Estudio</a>
-          <a href="#plataforma">Plataforma Online</a>
+          <!--<a href="#plataforma">Plataforma Online</a>   -->
           <a href="#becas">Becas y Descuentos</a>
           <a href="#nosotros">Sobre Nosotros</a>
           <a href="#contacto">Contacto</a>
@@ -36,7 +39,7 @@
       <ul class="inicio-menu" style="display: none;">
         <li><a href="#cursos">Cursos</a></li>
         <li><a href="#modalidades">Modalidades</a></li>
-        <li><a href="#plataforma">Plataforma</a></li>
+        <!--<li><a href="#plataforma">Plataforma</a></li> -->
         <li><a href="#becas">Becas</a></li>
         <li><a href="#nosotros">Nosotros</a></li>
         <li><a href="#contacto">Contacto</a></li>
@@ -45,7 +48,7 @@
         <img src="img/image-removebg-preview.png" alt="Imagen representativa" class="inicio-logo">
         <h1 class="inicio-titulo">Aprende Inglés con facilidad y de manera espectacular</h1>
         <p class="inicio-desc">
-          En Easy English Cool (EEC) ofrecemos clases dinámicas, personalizadas y accesibles para todas las edades y niveles. Contamos con programas especializados, precios especiales según el oficio, y la opción de estudiar entre semana o en fines de semana. Nuestro objetivo es que cada estudiante avance con seguridad y disfrute el proceso de aprendizaje.
+          En Easy English Cool (EEC) ofrecemos clases de inglés dinámicas, accesibles y personalizadas para todas las edades y niveles. Contamos con cursos grupales y particulares, programas especializados, precios especiales según el oficio y horarios flexibles entre semana o fines de semana. Nuestro objetivo es que avances con seguridad y disfrutes cada paso en tu aprendizaje.
         </p>
       </div>
     </div>
@@ -58,7 +61,7 @@
     <div class="card-container">
       <div class="card">
         <img src="img/Pelota_AzAm-removebg-preview.png" alt="Infantil">
-        <h3>Niños (5-12 años)</h3>
+        <h3>Niños (7-12 años)</h3>
         <div class="modalidad-badge">Presencial / Online</div>
         <p>Clases divertidas y dinámicas con métodos lúdicos para los más pequeños. Aprendizaje natural a través de juegos, canciones y actividades interactivas.</p>
         <button class="btn" onclick="mostrarModal('ninos')">Ver detalles</button>
@@ -119,7 +122,7 @@
   </section>
 
   <!-- PLATAFORMA EN LÍNEA -->
-  <section id="plataforma">
+  <!--<section id="plataforma">
     <h2>Plataforma de Aprendizaje Online</h2>
     <p>Accede a nuestras clases en línea con la más moderna tecnología educativa</p>
     <div class="card-container">
@@ -176,7 +179,7 @@
         </div>
       </div>
     </div>
-  </section>
+  </section> -->
 
   <!-- BECAS -->
   <section id="becas">
@@ -187,10 +190,9 @@
         <h3>🎓 Descuentos Estudiantiles</h3>
         <p>Aprovecha descuentos especiales en la inscripción y mensualidades de nuestros cursos.</p>
         <ul>
-          <li>20% de descuento para estudiantes</li>
+          <li>30% de descuento para estudiantes en universidades Enlazadas</li>
           <li>15% para trabajadores de servicios públicos</li>
           <li>Promociones por temporada</li>
-          <li>Descuentos por referidos</li>
         </ul>
         <button class="btn" onclick="mostrarModal('descuentos')">Ver todos los descuentos</button>
       </div>
@@ -199,9 +201,8 @@
         <p>Consulta las universidades con las que tenemos convenios para facilitar tu acceso a becas y apoyos.</p>
         <ul>
           <li>Programas de becas exclusivos</li>
-          <li>Reconocimiento de créditos</li>
           <li>Certificaciones conjuntas</li>
-          <li>Eventos académicos especiales</li>
+          <li>Exámenes de preparación</li>
         </ul>
         <button class="btn" onclick="mostrarModal('universidades')">Ver universidades</button>
       </div>
@@ -256,7 +257,7 @@
         <p>
           <strong>WhatsApp:</strong> 55 1696 6619<br>
           <strong>Teléfono:</strong> 55 1696 6619<br>
-          <strong>Horario:</strong> Lunes a Domingo, 7:00 AM - 10:00 PM
+          <strong>Horario:</strong> Lunes a Sabado, 12:00 PM - 08:00 PM
         </p>
       </div>
       <div class="card">
@@ -268,7 +269,7 @@
           </span><br>
           <strong>Soporte técnico:</strong>
           <span onclick="copiarCorreo()" style="cursor: pointer; color: #1976d2; font-weight: bold;">
-            dianadiaz07162513@gmail.com
+            easyenglishcool6@gmail.com
           </span><br>
         </p>
       </div>
@@ -278,9 +279,9 @@
       <h3>Síguenos en Redes Sociales</h3>
       <div class="social-links">
         <a href="https://www.facebook.com/profile.php?id=61580189236869" target="_blank" class="social-btn">Facebook</a>
-        <a href="#" class="social-btn">Instagram</a>
+        <!--<a href="#" class="social-btn">Instagram</a>
         <a href="#" class="social-btn">YouTube</a>
-        <a href="#" class="social-btn">TikTok</a>
+        <a href="#" class="social-btn">TikTok</a>-->
       </div>
     </div>
   </section>

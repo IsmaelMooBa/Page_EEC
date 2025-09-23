@@ -124,21 +124,16 @@ function mostrarModal(tipo) {
           <h2>Descuentos</h2>
           <p>Ofrecemos descuentos especiales para estudiantes, trabajadores de ciertos oficios y promociones por inscripción temprana. Consulta los requisitos y fechas vigentes con nuestro equipo.</p>
           <ul>
-            <li>Descuento del 20% para estudiantes con credencial vigente</li>
+            <li>Descuento del 30% para estudiantes con credencial vigente</li>
             <li>Descuento del 15% para trabajadores de servicios públicos</li>
             <li>Promociones especiales por temporada</li>
-            <li>Descuentos por referidos</li>
           </ul>
         `,
         universidades: `
           <h2>Universidades Enlazadas</h2>
-          <p>Tenemos convenios con diversas universidades para facilitar el acceso a becas, apoyos y certificaciones. Pregunta por las instituciones participantes y los beneficios disponibles.</p>
+          <p>Tenemos convenios con universidades para facilitar el acceso a becas, apoyos y certificaciones. Pregunta por las instituciones participantes y los beneficios disponibles.</p>
           <ul>
-            <li>Universidad Nacional Autónoma de México (UNAM)</li>
-            <li>Instituto Politécnico Nacional (IPN)</li>
-            <li>Universidad Autónoma Metropolitana (UAM)</li>
-            <li>Universidad Anáhuac</li>
-            <li>Universidad Panamericana</li>
+            <li>Universidad Politecnica de Tecamac, UPT</li>
           </ul>
         `
     };
