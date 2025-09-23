@@ -206,7 +206,7 @@ function mostrarMensajeCopiado() {
             position: fixed;
             top: 20px;
             right: 20px;
-            background: #28a745;
+            background: #a76528ff;
             color: white;
             padding: 12px 24px;
             border-radius: 8px;
