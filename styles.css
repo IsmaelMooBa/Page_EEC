@@ -157,7 +157,7 @@ body {
   animation: fadeInUp 0.6s ease-out;
 }
 
-/* ===== NAVEGACIÓN ===== */
+/* ===== NAVEGACIÓN PRINCIPAL ===== */
 nav {
   position: fixed;
   top: 0;
@@ -201,6 +201,57 @@ nav.scrolled {
   display: flex;
   gap: 15px;
   align-items: center;
+}
+
+/* Menú de navegación desktop */
+.desktop-menu {
+  display: flex;
+  gap: 2rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.desktop-menu a {
+  color: var(--color-white);
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  transition: background-color 0.3s;
+  font-weight: 600;
+}
+
+.desktop-menu a:hover {
+  background-color: rgba(255,255,255,0.2);
+}
+
+/* Menú móvil */
+.nav-menu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  background-color: var(--color-secondary);
+  flex-direction: column;
+  z-index: 1000;
+  box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+}
+
+.nav-menu.active {
+  display: flex;
+}
+
+.nav-menu a {
+  padding: 1rem 2rem;
+  color: var(--color-white);
+  text-decoration: none;
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+  transition: background-color 0.3s;
+}
+
+.nav-menu a:hover {
+  background-color: rgba(25, 118, 210, 0.8);
 }
 
 /* ===== BOTONES ===== */
@@ -312,7 +363,7 @@ p {
   line-height: 1.7;
 }
 
-/* ===== SECCIÓN INICIO CON IMAGEN DE FONDO ===== */
+/* ===== SECCIÓN INICIO ===== */
 #inicio {
   background: 
     linear-gradient(120deg, rgba(25, 118, 210, 0.85) 0%, rgba(37, 150, 190, 0.85) 100%),
@@ -326,6 +377,7 @@ p {
   text-align: center;
   position: relative;
   overflow: hidden;
+  min-height: 100vh;
 }
 
 #inicio::before {
@@ -342,10 +394,10 @@ p {
 
 .inicio-flex {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 60px;
+  gap: 40px;
   width: 100%;
   max-width: 1200px;
   margin: 0 auto;
@@ -354,7 +406,7 @@ p {
 }
 
 .inicio-titulo {
-  font-size: 3rem;
+  font-size: 2.5rem;
   font-weight: 800;
   margin-bottom: 20px;
   text-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
@@ -363,7 +415,7 @@ p {
 }
 
 .inicio-desc {
-  font-size: 1.25rem;
+  font-size: 1.2rem;
   margin-bottom: 30px;
   opacity: 0.95;
   line-height: 1.6;
@@ -372,7 +424,7 @@ p {
 
 .inicio-texto {
   flex: 1;
-  max-width: 600px;
+  max-width: 800px;
   background: rgba(37, 150, 190, 0.15);
   backdrop-filter: blur(10px);
   border-radius: 20px;
@@ -399,11 +451,11 @@ p {
   animation: none;
 }
 
-/* ===== MENÚ DE NAVEGACIÓN ===== */
+/* Menú de navegación en inicio */
 .inicio-menu {
-  display: flex;
+  display: none;
   flex-direction: column;
-  align-items: flex-start;
+  align-items: center;
   list-style: none;
   margin-bottom: 30px;
   gap: 15px;
@@ -411,7 +463,6 @@ p {
   background: var(--color-secondary);
   border-radius: 18px;
   box-shadow: 0 4px 20px rgba(25, 118, 210, 0.15);
-  flex: 0 0 auto;
   animation: fadeInLeft 1s ease-out;
 }
 
@@ -489,7 +540,7 @@ p {
 }
 
 .card:hover {
-  transform: translateY(-8px) rotateX(5deg);
+  transform: translateY(-8px);
   box-shadow: var(--shadow-heavy);
 }
 
@@ -509,11 +560,10 @@ p {
   border-radius: 12px;
   margin-bottom: 20px;
   transition: var(--transition);
-  transform: translateZ(20px);
 }
 
 .card:hover img {
-  transform: scale(1.05) translateZ(20px);
+  transform: scale(1.05);
 }
 
 .card ul {
@@ -557,7 +607,7 @@ p {
   animation: pulse 2s infinite;
 }
 
-/* ===== FILOSOFÍA (MISIÓN, VISIÓN, VALORES) ===== */
+/* ===== FILOSOFÍA ===== */
 .philosophy-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
@@ -575,7 +625,6 @@ p {
   transition: var(--transition);
   position: relative;
   overflow: hidden;
-  transform-style: preserve-3d;
 }
 
 .philosophy-card::before {
@@ -594,7 +643,7 @@ p {
 }
 
 .philosophy-card:hover {
-  transform: translateY(-8px) scale(1.02);
+  transform: translateY(-8px);
   box-shadow: 0 15px 35px rgba(25, 118, 210, 0.25);
 }
 
@@ -754,11 +803,13 @@ p {
   transform: translateX(5px);
 }
 
-/* ===== MENÚ DESPLEGABLE ===== */
+/* ===== DROPDOWN (MÓVIL) ===== */
 .dropdown {
   position: relative;
   display: inline-block;
   margin-bottom: 25px;
+  width: 100%;
+  max-width: 300px;
 }
 
 .dropdown-toggle {
@@ -773,7 +824,7 @@ p {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  min-width: 240px;
+  width: 100%;
   transition: var(--transition);
   box-shadow: var(--shadow-light);
 }
@@ -798,12 +849,14 @@ p {
   display: none;
   position: absolute;
   background-color: var(--color-white);
-  min-width: 240px;
+  width: 100%;
   box-shadow: var(--shadow-heavy);
   z-index: 1000;
   border-radius: 8px;
   overflow: hidden;
   animation: slideDown 0.3s ease;
+  top: 100%;
+  left: 0;
 }
 
 .dropdown-menu a {
@@ -952,7 +1005,7 @@ input:focus-visible {
     gap: 40px;
   }
   .inicio-titulo {
-    font-size: 2.5rem;
+    font-size: 2.2rem;
   }
   .inicio-texto {
     padding: 30px;
@@ -962,78 +1015,91 @@ input:focus-visible {
 @media (max-width: 900px) {
   nav {
     padding: 0.8rem 1.5rem;
+    flex-wrap: wrap;
   }
+  
   section {
     padding: 80px 15px;
   }
+  
   #inicio {
     padding: 100px 0 60px;
   }
-  .inicio-flex {
-    flex-direction: column;
-    gap: 30px;
-  }
-  .inicio-menu {
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: center;
-    padding: 15px;
-    width: 100%;
-  }
-  .inicio-menu li {
-    padding-left: 20px;
-    font-size: 1rem;
-  }
+  
   .card-container {
     grid-template-columns: 1fr;
     gap: 20px;
   }
+  
   .card {
     max-width: 500px;
     margin: 0 auto;
   }
+  
   .philosophy-grid {
     grid-template-columns: 1fr;
     gap: 25px;
   }
+  
   .nav-buttons {
     flex-direction: column;
     gap: 10px;
     width: 100%;
+    margin-top: 10px;
   }
+  
   .btn, .btn.btn-destacado, nav .btn, .btn-examen {
     width: 100%;
     max-width: 300px;
-    margin: 10px auto;
+    margin: 5px auto;
     font-size: 0.9rem;
     padding: 10px 15px;
   }
+  
   h2 {
     font-size: 2rem;
   }
+  
   .inicio-titulo {
-    font-size: 2.2rem;
+    font-size: 2rem;
+  }
+  
+  .desktop-menu {
+    display: none;
   }
 }
 
 @media (max-width: 768px) {
   .inicio-titulo {
-    font-size: 2rem;
+    font-size: 1.8rem;
   }
+  
   .inicio-desc {
     font-size: 1.1rem;
   }
+  
   .modal-contenido {
     padding: 30px 20px;
   }
+  
   .philosophy-card {
     padding: 25px 20px;
   }
+  
   .dropdown {
-    display: inline-block;
+    display: block;
   }
+  
   .inicio-menu {
-    display: none !important;
+    display: none;
+  }
+  
+  .nav-menu {
+    display: none;
+  }
+  
+  .nav-menu.active {
+    display: flex;
   }
 }
 
@@ -1043,31 +1109,54 @@ input:focus-visible {
     flex-direction: column;
     gap: 10px;
   }
+  
   .nav-logo {
     margin-right: 0;
     margin-bottom: 10px;
   }
+  
   .inicio-titulo {
-    font-size: 1.8rem;
+    font-size: 1.6rem;
   }
+  
   .inicio-texto {
     padding: 20px;
   }
+  
   h2 {
     font-size: 1.8rem;
   }
+  
   .dropdown-toggle {
-    min-width: 200px;
     font-size: 1rem;
     padding: 12px 20px;
   }
 }
 
-@media (min-width: 768px) {
+@media (min-width: 769px) {
   .dropdown {
     display: none;
   }
+  
   .inicio-menu {
-    display: flex !important;
+    display: flex;
+  }
+  
+  .desktop-menu {
+    display: flex;
+  }
+  
+  .nav-menu {
+    display: none !important;
+  }
+  
+  .inicio-flex {
+    flex-direction: row;
+    text-align: left;
+  }
+  
+  .inicio-menu {
+    flex-direction: column;
+    align-items: flex-start;
   }
 }

@@ -1,189 +1,318 @@
-// scripts.js
+// scripts.js - Código optimizado y corregido
 document.addEventListener('DOMContentLoaded', function() {
-    // Smooth scrolling for navigation links
-    document.querySelectorAll('nav a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function(e) {
-            e.preventDefault();
-            const targetId = this.getAttribute('href');
-            const target = document.querySelector(targetId);
-            
-            if (target) {
-                // Cerrar menú dropdown si está abierto
-                const dropdown = document.querySelector('.dropdown');
-                if (dropdown && dropdown.classList.contains('show')) {
-                    dropdown.classList.remove('show');
-                }
+    // ===== CONFIGURACIÓN INICIAL =====
+    let currentImage = 0;
+    let carouselInterval;
+
+    // ===== FUNCIONES DE UTILIDAD =====
+    function debounce(func, wait) {
+        let timeout;
+        return function executedFunction(...args) {
+            const later = () => {
+                clearTimeout(timeout);
+                func(...args);
+            };
+            clearTimeout(timeout);
+            timeout = setTimeout(later, wait);
+        };
+    }
+
+    // ===== SMOOTH SCROLLING =====
+    function initSmoothScrolling() {
+        document.querySelectorAll('nav a[href^="#"], .inicio-menu a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                const target = document.querySelector(targetId);
                 
-                target.scrollIntoView({
-                    behavior: 'smooth',
-                    block: 'start'
+                if (target) {
+                    // Cerrar menús abiertos
+                    closeAllDropdowns();
+                    closeMobileMenu();
+                    
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    }
+
+    // ===== CARRUSEL =====
+    function initCarousel() {
+        const carouselImages = document.querySelectorAll('.carousel-images img');
+        
+        function showImage(index) {
+            carouselImages.forEach((img, i) => {
+                img.classList.toggle('active', i === index);
+            });
+        }
+
+        function nextImage() {
+            if (carouselImages.length > 0) {
+                currentImage = (currentImage + 1) % carouselImages.length;
+                showImage(currentImage);
+            }
+        }
+
+        if (carouselImages.length > 0) {
+            showImage(currentImage);
+            // Limpiar intervalo existente antes de crear uno nuevo
+            if (carouselInterval) clearInterval(carouselInterval);
+            carouselInterval = setInterval(nextImage, 5000);
+            
+            // Pausar carrusel al hacer hover
+            const carousel = document.querySelector('.carousel-images');
+            if (carousel) {
+                carousel.addEventListener('mouseenter', () => {
+                    if (carouselInterval) clearInterval(carouselInterval);
+                });
+                
+                carousel.addEventListener('mouseleave', () => {
+                    if (carouselImages.length > 0) {
+                        carouselInterval = setInterval(nextImage, 5000);
+                    }
+                });
+            }
+        }
+    }
+
+    // ===== DROPDOWNS =====
+    function initDropdowns() {
+        const dropdowns = document.querySelectorAll('.dropdown');
+        
+        dropdowns.forEach(dropdown => {
+            const toggle = dropdown.querySelector('.dropdown-toggle');
+            
+            if (toggle) {
+                toggle.addEventListener('click', function(e) {
+                    e.stopPropagation();
+                    const isShowing = dropdown.classList.contains('show');
+                    
+                    // Cerrar otros dropdowns
+                    closeAllDropdowns();
+                    
+                    // Abrir/cerrar el actual
+                    if (!isShowing) {
+                        dropdown.classList.add('show');
+                    }
                 });
             }
         });
-    });
 
-    // Carousel functionality (solo si existe el carousel)
-    const carouselImages = document.querySelectorAll('.carousel-images img');
-    let currentImage = 0;
-
-    function showImage(index) {
-        carouselImages.forEach((img, i) => {
-            img.classList.toggle('active', i === index);
-        });
-    }
-
-    function nextImage() {
-        currentImage = (currentImage + 1) % carouselImages.length;
-        showImage(currentImage);
-    }
-
-    if (carouselImages.length > 0) {
-        showImage(currentImage);
-        setInterval(nextImage, 5000);
-    }
-
-    // Funcionalidad para el menú desplegable
-    const dropdownToggle = document.querySelector('.dropdown-toggle');
-    const dropdown = document.querySelector('.dropdown');
-    
-    if (dropdownToggle && dropdown) {
-        dropdownToggle.addEventListener('click', function(e) {
-            e.stopPropagation();
-            dropdown.classList.toggle('show');
-        });
-        
-        // Cerrar el menú al hacer clic fuera de él
+        // Cerrar al hacer clic fuera
         document.addEventListener('click', function(e) {
-            if (!dropdown.contains(e.target)) {
-                dropdown.classList.remove('show');
+            if (!e.target.closest('.dropdown')) {
+                closeAllDropdowns();
+            }
+        });
+
+        // Cerrar con ESC
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                closeAllDropdowns();
             }
         });
     }
-    
-    // Mostrar el menú adecuado según el tamaño de pantalla
-    function checkScreenSize() {
+
+    function closeAllDropdowns() {
+        document.querySelectorAll('.dropdown').forEach(dropdown => {
+            dropdown.classList.remove('show');
+        });
+    }
+
+    // ===== MENÚ MÓVIL =====
+    function initMobileMenu() {
+        const navToggle = document.getElementById('navToggle');
+        const navMenu = document.getElementById('navMenu');
+        const dropdownToggle = document.getElementById('dropdownToggle');
+        const dropdownMenu = document.getElementById('dropdownMenu');
+        
+        if (navToggle && navMenu) {
+            navToggle.addEventListener('click', function(e) {
+                e.stopPropagation();
+                navMenu.classList.toggle('active');
+            });
+        }
+        
+        if (dropdownToggle && dropdownMenu) {
+            dropdownToggle.addEventListener('click', function(e) {
+                e.stopPropagation();
+                dropdownMenu.classList.toggle('active');
+            });
+        }
+
+        // Cerrar menús al hacer clic fuera
+        document.addEventListener('click', function(e) {
+            if (navMenu && !e.target.closest('nav')) {
+                navMenu.classList.remove('active');
+            }
+            
+            if (dropdownMenu && !e.target.closest('.dropdown')) {
+                dropdownMenu.classList.remove('active');
+            }
+        });
+    }
+
+    // ===== RESPONSIVE MENU HANDLING =====
+    function handleResponsiveMenu() {
         const inicioMenu = document.querySelector('.inicio-menu');
         const dropdown = document.querySelector('.dropdown');
         
         if (window.innerWidth >= 768) {
-            // Pantallas grandes: mostrar menú horizontal
+            // Desktop
             if (inicioMenu) {
                 inicioMenu.style.display = 'flex';
-                inicioMenu.style.opacity = '1';
             }
-            if (dropdown) dropdown.style.display = 'none';
+            if (dropdown) {
+                dropdown.style.display = 'none';
+            }
+            closeMobileMenu();
         } else {
-            // Pantallas pequeñas: mostrar menú desplegable
+            // Mobile
             if (inicioMenu) {
                 inicioMenu.style.display = 'none';
-                inicioMenu.style.opacity = '0';
             }
-            if (dropdown) dropdown.style.display = 'inline-block';
-        }
-    }
-    
-    // Verificar el tamaño de pantalla al cargar y al redimensionar
-    checkScreenSize();
-    window.addEventListener('resize', checkScreenSize);
-
-    // Animación al hacer scroll
-    const animatedElements = document.querySelectorAll('.animate-on-scroll, .animate-left, .animate-right, .animate-scale');
-    
-    if (animatedElements.length > 0) {
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('animated');
-                    // Opcional: dejar de observar después de animar para mejor rendimiento
-                    // observer.unobserve(entry.target);
-                }
-            });
-        }, {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        });
-
-        animatedElements.forEach(element => {
-            observer.observe(element);
-        });
-    }
-
-    // Navbar scroll effect
-    window.addEventListener('scroll', function() {
-        const nav = document.querySelector('nav');
-        if (nav) {
-            if (window.scrollY > 100) {
-                nav.classList.add('scrolled');
-            } else {
-                nav.classList.remove('scrolled');
+            if (dropdown) {
+                dropdown.style.display = 'block';
             }
         }
-    });
+    }
 
-    // Dropdown menu functionality para múltiples dropdowns
-    const dropdownToggleElements = document.querySelectorAll('.dropdown-toggle');
-    
-    dropdownToggleElements.forEach(toggle => {
-        toggle.addEventListener('click', function() {
-            const parentDropdown = this.closest('.dropdown');
-            if (parentDropdown) {
-                // Cerrar otros dropdowns abiertos
-                document.querySelectorAll('.dropdown').forEach(drop => {
-                    if (drop !== parentDropdown) {
-                        drop.classList.remove('show');
+    function closeMobileMenu() {
+        const navMenu = document.getElementById('navMenu');
+        if (navMenu) navMenu.classList.remove('active');
+    }
+
+    // ===== SCROLL ANIMATIONS =====
+    function initScrollAnimations() {
+        const animatedElements = document.querySelectorAll('.animate-on-scroll, .animate-left, .animate-right, .animate-scale');
+        
+        if (animatedElements.length > 0) {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('animated');
                     }
                 });
-                parentDropdown.classList.toggle('show');
-            }
-        });
-    });
+            }, {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            });
 
-    // Close dropdown when clicking outside
-    document.addEventListener('click', function(event) {
-        if (!event.target.matches('.dropdown-toggle') && !event.target.closest('.dropdown-toggle')) {
-            const dropdowns = document.querySelectorAll('.dropdown');
-            dropdowns.forEach(dropdown => {
-                dropdown.classList.remove('show');
+            animatedElements.forEach(element => {
+                observer.observe(element);
             });
         }
-    });
+    }
 
-    // Efectos hover mejorados para tarjetas
-    const cards = document.querySelectorAll('.card');
-    cards.forEach(card => {
-        card.addEventListener('mouseenter', function() {
-            this.style.transform = 'translateY(-8px) rotateX(5deg)';
-        });
+    // ===== NAVBAR SCROLL EFFECT =====
+    function initNavbarScroll() {
+        const nav = document.querySelector('nav');
         
-        card.addEventListener('mouseleave', function() {
-            this.style.transform = 'translateY(0) rotateX(0)';
-        });
-    });
+        if (nav) {
+            window.addEventListener('scroll', debounce(function() {
+                if (window.scrollY > 100) {
+                    nav.classList.add('scrolled');
+                } else {
+                    nav.classList.remove('scrolled');
+                }
+            }, 10));
+        }
+    }
 
-    // Efecto para los elementos de lista en las tarjetas
-    const cardListItems = document.querySelectorAll('.card li, .values-list li');
-    cardListItems.forEach(item => {
-        item.addEventListener('mouseenter', function() {
-            this.style.transform = 'translateX(5px)';
+    // ===== HOVER EFFECTS =====
+    function initHoverEffects() {
+        // Efectos para tarjetas
+        const cards = document.querySelectorAll('.card');
+        cards.forEach(card => {
+            card.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-8px)';
+            });
+            
+            card.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateY(0)';
+            });
         });
+
+        // Efectos para elementos de lista
+        const listItems = document.querySelectorAll('.card li, .values-list li');
+        listItems.forEach(item => {
+            item.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateX(5px)';
+            });
+            
+            item.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateX(0)';
+            });
+        });
+
+        // Efectos para botones sociales
+        const socialBtns = document.querySelectorAll('.social-btn');
+        socialBtns.forEach(btn => {
+            btn.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-3px)';
+            });
+            
+            btn.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateY(0)';
+            });
+        });
+
+        // Efectos para badges
+        const badges = document.querySelectorAll('.modalidad-badge');
+        badges.forEach(badge => {
+            badge.addEventListener('mouseenter', function() {
+                this.style.transform = 'scale(1.1)';
+            });
+            
+            badge.addEventListener('mouseleave', function() {
+                this.style.transform = 'scale(1)';
+            });
+        });
+    }
+
+    // ===== INICIALIZACIÓN DE ANIMACIONES =====
+    function initInicioAnimations() {
+        const inicioElements = document.querySelectorAll('.inicio-titulo, .inicio-desc, .inicio-texto');
+        inicioElements.forEach((element, index) => {
+            element.style.animationDelay = `${index * 0.2}s`;
+        });
+    }
+
+    // ===== INICIALIZACIÓN PRINCIPAL =====
+    function init() {
+        initSmoothScrolling();
+        initCarousel();
+        initDropdowns();
+        initMobileMenu();
+        initScrollAnimations();
+        initNavbarScroll();
+        initHoverEffects();
+        initInicioAnimations();
         
-        item.addEventListener('mouseleave', function() {
-            this.style.transform = 'translateX(0)';
-        });
-    });
+        // Manejo responsive inicial
+        handleResponsiveMenu();
+        
+        // Event listeners para resize
+        window.addEventListener('resize', debounce(function() {
+            handleResponsiveMenu();
+            // Reiniciar carrusel si es necesario
+            initCarousel();
+        }, 250));
+    }
 
-    // Inicializar animaciones de la sección inicio
-    const inicioElements = document.querySelectorAll('.inicio-titulo, .inicio-desc, .inicio-texto, .inicio-menu');
-    inicioElements.forEach((element, index) => {
-        element.style.animationDelay = `${index * 0.2}s`;
-    });
+    // Ejecutar inicialización
+    init();
 });
+
+// ===== FUNCIONES GLOBALES =====
 
 // Función para copiar correo
 function copiarCorreo() {
     const email = 'easyenglishcool6@gmail.com';
     
-    // Método moderno con Clipboard API
     if (navigator.clipboard && window.isSecureContext) {
         navigator.clipboard.writeText(email).then(function() {
             mostrarMensajeCopiado();
@@ -191,7 +320,6 @@ function copiarCorreo() {
             fallbackCopyEmail(email);
         });
     } else {
-        // Fallback para navegadores más antiguos o HTTP
         fallbackCopyEmail(email);
     }
 }
@@ -206,12 +334,11 @@ function mostrarMensajeCopiado() {
             position: fixed;
             top: 20px;
             right: 20px;
-            background: #a76528ff;
+            background: #28a745;
             color: white;
             padding: 12px 24px;
             border-radius: 8px;
             z-index: 10000;
-            display: none;
             font-weight: 600;
             box-shadow: 0 4px 12px rgba(40, 167, 69, 0.3);
             animation: fadeIn 0.3s ease;
@@ -226,7 +353,6 @@ function mostrarMensajeCopiado() {
 }
 
 function fallbackCopyEmail(email) {
-    // Método fallback para copiar texto
     const textArea = document.createElement('textarea');
     textArea.value = email;
     textArea.style.position = 'fixed';
@@ -251,7 +377,7 @@ function fallbackCopyEmail(email) {
     }
 }
 
-// Función para mostrar el modal único
+// Función para mostrar el modal
 function mostrarModal(tipo) {
     const info = {
         ninos: `
@@ -334,52 +460,41 @@ function cerrarModal() {
     }
 }
 
-// Cierra el modal al hacer clic fuera del contenido
-document.addEventListener('click', function(e) {
-    const modal = document.getElementById('modal-unico');
-    if (modal && e.target === modal) {
-        cerrarModal();
-    }
-});
-
-// Cerrar modal con tecla ESC
-document.addEventListener('keydown', function(e) {
-    if (e.key === 'Escape') {
-        cerrarModal();
-    }
-});
-
-// Prevenir que el modal se cierre al hacer clic dentro del contenido
-document.addEventListener('click', function(e) {
-    const modalContent = document.querySelector('.modal-contenido');
-    if (modalContent && modalContent.contains(e.target)) {
-        e.stopPropagation();
-    }
-});
-
-// Efectos interactivos adicionales
+// Event listeners globales para el modal
 document.addEventListener('DOMContentLoaded', function() {
-    // Efecto hover para botones sociales
-    const socialBtns = document.querySelectorAll('.social-btn');
-    socialBtns.forEach(btn => {
-        btn.addEventListener('mouseenter', function() {
-            this.style.transform = 'translateY(-3px) scale(1.05)';
-        });
-        
-        btn.addEventListener('mouseleave', function() {
-            this.style.transform = 'translateY(0) scale(1)';
-        });
+    // Cierra el modal al hacer clic fuera del contenido
+    document.addEventListener('click', function(e) {
+        const modal = document.getElementById('modal-unico');
+        if (modal && e.target === modal) {
+            cerrarModal();
+        }
     });
-    
-    // Efecto para los badges de modalidad
-    const badges = document.querySelectorAll('.modalidad-badge');
-    badges.forEach(badge => {
-        badge.addEventListener('mouseenter', function() {
-            this.style.transform = 'scale(1.1)';
-        });
-        
-        badge.addEventListener('mouseleave', function() {
-            this.style.transform = 'scale(1)';
-        });
+
+    // Cerrar modal con tecla ESC
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape') {
+            cerrarModal();
+        }
     });
+
+    // Prevenir que el modal se cierre al hacer clic dentro del contenido
+    document.addEventListener('click', function(e) {
+        const modalContent = document.querySelector('.modal-contenido');
+        if (modalContent && modalContent.contains(e.target)) {
+            e.stopPropagation();
+        }
+    });
+});
+
+// ===== MANEJO DE ERRORES =====
+window.addEventListener('error', function(e) {
+    console.error('Error capturado:', e.error);
+});
+
+// ===== CLEANUP ON UNLOAD =====
+window.addEventListener('beforeunload', function() {
+    // Limpiar intervalos si existen
+    if (typeof carouselInterval !== 'undefined') {
+        clearInterval(carouselInterval);
+    }
 });
