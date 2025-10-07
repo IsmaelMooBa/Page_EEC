@@ -417,11 +417,10 @@ function mostrarModal(tipo) {
             <h2>Descuentos y Promociones</h2>
             <p>Ofrecemos descuentos especiales para hacer tu educación más accesible.</p>
             <ul>
-                <li><strong>30% de descuento:</strong> Estudiantes con credencial vigente</li>
-                <li><strong>15% de descuento:</strong> Trabajadores de servicios públicos</li>
+                <li><strong>Descuento :</strong> Estudiantes con credencial vigente</li>
+                <li><strong>Descuento:</strong> Trabajadores de servicios públicos</li>
                 <li><strong>Promociones por temporada:</strong> Consulta fechas vigentes</li>
                 <li><strong>Descuento por referido:</strong> 10% por cada amigo que se inscriba</li>
-                <li><strong>Pago anticipado:</strong> 5% de descuento en pagos semestrales</li>
             </ul>
         `,
         universidades: `
